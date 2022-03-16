@@ -1,11 +1,11 @@
 import React from 'react';
 import './Banner.css'
-import banner from '../../images/home-img.png'
+import banner from '../../../images/home-img.png'
 
 const Banner = () => {
     return (
-        <div>
-            <section className="home" id="home">
+        <div >
+            <section className="home mx-3" id="home">
 
                 <div className="content">
                     <h3>R E D  C H I L L I</h3>

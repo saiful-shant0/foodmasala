@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
 .home{
     display: flex;
     flex-wrap: wrap;
@@ -10,7 +11,7 @@
   }
   .home .content{
     flex:1 1 40rem;
-    padding-top: 6.5rem;
+    /* padding-top: 6.5rem; */
   }
   
   .home .image{
@@ -33,16 +34,16 @@
   }
   
   .home .content h3{
-    font-size: 5rem;
+    font-size: 3rem; 
     color:#333;
   }
   
   .home .content p{
-    font-size: 1.7rem;
+    /* font-size: 1.7rem; */
     color:#666;
     padding:1rem 0;
   }
-  .btn{
+  /* .btn{
     display: inline-block;
     padding:.8rem 3rem;
     border:.2rem solid var(--red);
@@ -74,4 +75,8 @@
   
   .btn:hover{
     color:#fff;
+  } */
+  section{
+    padding:2rem 2%;
   }
+
