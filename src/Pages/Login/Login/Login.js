@@ -1,17 +1,39 @@
-
 import { Alert, CircularProgress, Container, Grid, Typography } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useState } from 'react';
+import { NavLink, useNavigate, useLocation } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
+
+// const firebaseConfig = {
+//     apiKey: "AIzaSyC6QqoyaxU6n404_fY8a_GmLHUcG1XQgno",
+//     authDomain: "foodmasala-58131.firebaseapp.com",
+//     projectId: "foodmasala-58131",
+//     storageBucket: "foodmasala-58131.appspot.com",
+//     messagingSenderId: "373291459785",
+//     appId: "1:373291459785:web:6c348fe6497532694cd918"
+//   };
+
+
 
 const Login = () => {
-    const handleLogInSubmit = e => {
 
+    const [logInData, setLogInData] = useState({});
+    const { loginUser, isLoading, user, authError } = useAuth();
+
+    const location = useLocation();
+    const history = useNavigate();
+    const handleLogInSubmit = e => {
+        loginUser(logInData.email, logInData.password, location, history)
+        e.preventDefault();
     }
 
     const handleOnChange = e => {
-
+        const field = e.target.name;
+        const value = e.target.value;
+        const newLoginData = { ...logInData };
+        newLoginData[field] = value;
+        setLogInData(newLoginData);
 
     }
 
@@ -55,9 +77,9 @@ const Login = () => {
                             <Button variant="text">New User? Please Register </Button>
                         </NavLink>
 
-                        <CircularProgress />
-                        <Alert severity="success">Login Successfully</Alert>
-                        <Alert severity="error"></Alert>
+                        {isLoading && <CircularProgress />}
+                        {user?.email && <Alert severity="success">Login Successfully</Alert>}
+                        {authError && <Alert severity="error">{authError}</Alert>}
                     </form>
                     <br />
                     <br />

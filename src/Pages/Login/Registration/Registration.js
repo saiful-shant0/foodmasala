@@ -1,15 +1,32 @@
 import { Alert, CircularProgress, Container, Grid, Typography } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useState } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 
 const Registration = () => {
-    const handleLogInSubmit = e => {
+    const [logInData, setLogInData] = useState({});
+    const history = useNavigate();
+    const { registerUser, isLoading, user, authError } = useAuth();
 
+    const handleLogInSubmit = e => {
+        if (logInData.password !== logInData.password2) {
+            alert('Pass is Not match')
+            return;
+        }
+        registerUser(logInData.email, logInData.password, logInData.name, history)
+
+        e.preventDefault()
     }
 
+
     const handleOnChange = e => {
+        const field = e.target.name;
+        const value = e.target.value;
+        const newLoginData = { ...logInData };
+        newLoginData[field] = value;
+        setLogInData(newLoginData);
 
 
     }
@@ -21,7 +38,7 @@ const Registration = () => {
             <Grid container spacing={2}>
                 <Grid item sx={{ mt: 8 }} xs={12} md={6}>
 
-                    <form onSubmit={handleLogInSubmit}>
+                    {!isLoading && <form onSubmit={handleLogInSubmit}>
                         <TextField
                             sx={{ width: '75%', m: 1 }}
                             id="standard-basic" label="Your Name"
@@ -61,10 +78,10 @@ const Registration = () => {
                             to='/login'>
                             <Button variant="text">Already Register? Please LogIn </Button>
                         </NavLink>
-                    </form>
-                    <CircularProgress />
-                    <Alert severity="success">Created Successfully</Alert>
-                    <Alert severity="error">{ }</Alert>
+                    </form>}
+                    {isLoading && <CircularProgress />}
+                    {user?.email && <Alert severity="success">Created Successfully</Alert>}
+                    {authError && <Alert severity="error">{authError}</Alert>}
                 </Grid>
                 <Grid item xs={12} md={6}>
                     <img style={{ width: '100%' }} src="https://www.nicepng.com/png/full/830-8305620_racing-motorbike-png-vector-for-a-motorcycle.png" alt="" />
@@ -72,6 +89,7 @@ const Registration = () => {
 
             </Grid>
         </Container>
+
     );
 };
 
