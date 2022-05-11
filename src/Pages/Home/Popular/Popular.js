@@ -1,4 +1,6 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import p1 from '../../../images/p-1.jpg';
 import p2 from '../../../images/p-2.jpg';
 import p3 from '../../../images/p-3.jpg';
@@ -8,18 +10,24 @@ import p6 from '../../../images/p-6.jpg';
 import './Popular.css';
 
 
-const Popular = () => {
+const Popular = ({ food }) => {
+    const { _id, name, photo, type, origine, price } = food;
+    let history = useNavigate();
+    const handleclick = (id) => {
+        const url = `/food/${_id}`;
+        history(url)
+    }
+
     return (
-        <section className="popular" id="popular">
+        <>
 
-            <h1 className="heading"> most <span>popular</span> foods </h1>
 
-            <div className="box-container">
 
+            {food.type == 'popular' &&
                 <div className="box">
-                    <span className="price"> $5 - $20 </span>
-                    <img src={p1} alt="" />
-                    <h3>Naga burger</h3>
+                    <span className="price"> {price} </span>
+                    <img src={photo} alt="" />
+                    <h3>{name}r</h3>
                     <div className="stars">
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
@@ -27,77 +35,13 @@ const Popular = () => {
                         <i className="fas fa-star"></i>
                         <i className="far fa-star"></i>
                     </div>
-                    <a href="#" className="btn">order now</a>
-                </div>
-                <div className="box">
-                    <span className="price"> $5 - $20 </span>
-                    <img src={p2} alt="" />
-                    <h3>musochar cakes</h3>
-                    <div className="stars">
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="far fa-star"></i>
-                    </div>
-                    <a href="#" className="btn">order now</a>
-                </div>
-                <div className="box">
-                    <span className="price"> $5 - $20 </span>
-                    <img src={p3} alt="" />
-                    <h3>white sweets</h3>
-                    <div className="stars">
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="far fa-star"></i>
-                    </div>
-                    <a href="#" className="btn">order now</a>
-                </div>
-                <div className="box">
-                    <span className="price"> $5 - $20 </span>
-                    <img src={p4} alt="" />
-                    <h3>cream cupcakes</h3>
-                    <div className="stars">
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="far fa-star"></i>
-                    </div>
-                    <a href="#" className="btn">order now</a>
-                </div>
-                <div className="box">
-                    <span className="price"> $5 - $20 </span>
-                    <img src={p5} alt="" />
-                    <h3>cold drinks</h3>
-                    <div className="stars">
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="far fa-star"></i>
-                    </div>
-                    <a href="#" className="btn">order now</a>
-                </div>
-                <div className="box">
-                    <span className="price"> $5 - $20 </span>
-                    <img src={p6} alt="" />
-                    <h3>cold ice-cream</h3>
-                    <div className="stars">
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="far fa-star"></i>
-                    </div>
-                    <a href="#" className="btn">order now</a>
-                </div>
+                    <Button onClick={() => handleclick(_id)} variant="warning"> Order Now </Button>
+                </div>}
+        </>
 
-            </div>
 
-        </section>
+
+
     );
 };
 

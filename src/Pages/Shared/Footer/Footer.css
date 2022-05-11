@@ -1,0 +1,69 @@
+#addo-footer2 {
+    padding: 120px;
+    background-color: red;
+    /* For browsers that do not support gradients */
+    background-image: linear-gradient(to bottom right, red, yellow);
+
+}
+
+#addo-footer2 h2 {
+    margin: 0 0 10px 0;
+    color: #fff;
+    font-size: 40px;
+    line-height: 30px;
+    letter-spacing: 3px;
+}
+
+#addo-footer2 h2 span {
+    text-align: center;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+@media screen and (max-width: 768px) {
+    #addo-footer2 {
+        padding: 100px 30px 80px 30px;
+        text-align: center;
+    }
+}
+
+.addo-lead {
+    font-size: 14px;
+    line-height: 2em;
+    color: #fff;
+}
+
+/* social 1 */
+
+.addo-social {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.addo-social li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: -moz-inline-stack;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+}
+
+.addo-social li a {
+    font-size: 22px;
+    color: #101010;
+    padding: 10px;
+    display: -moz-inline-stack;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    border-radius: 7px;
+}

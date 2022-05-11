@@ -10,7 +10,7 @@ const Reviews = () => {
     return (
         <section className="review" id="review">
 
-            <h1 className="heading"> our customers <span>reviews</span> </h1>
+            <h1 className="heading App"> Our Customers <span className='text-danger'>Reviews</span> </h1>
 
             <div className="box-container">
 

@@ -12,69 +12,45 @@ import s_4 from '../../../images/s-4.png';
 import s_5 from '../../../images/s-5.png';
 import s_6 from '../../../images/s-6.png';
 
-import './Speciality.css'
+import './Speciality.css';
+import { useNavigate } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
-const Speciality = () => {
+
+
+
+
+const Speciality = ({ food }) => {
+
+    const { _id, name, photo, type, origine, description } = food;
+    const des = description.slice(0, 70);
+    let history = useNavigate();
+    const handleclick = (id) => {
+        const url = `/food/${_id}`;
+        history(url)
+    }
+
+
     return (
         <>
-            <section className="speciality m-3" id="speciality">
 
-                <h1 className="heading"> our <span>speciality</span> </h1>
+            {food.type == 'Special' &&
+                <div className="box">
+                    <Button onClick={() => handleclick(_id)} variant="warning">  <img className="image" src={photo} alt="" /> </Button>
 
-                <div className="box-container">
+                    <div className="content">
+                        <img src={s_2} alt="" />
+                        <h3>{name}</h3>
+                        <br />
+                        <br />
+                        <p>{des}</p>
+                        <Button onClick={() => handleclick(_id)} variant="warning"> Order Now </Button>
+                    </div>
+                </div>}
 
-                    <div className="box">
-                        <img className="image" src={s1} alt="" />
-                        <div className="content">
-                            <img src={s_1} alt="" />
-                            <h3>naga burger</h3>
-                            <p>Naga burger is made with home made bread and infused with best quality masala and chicken</p>
-                        </div>
-                    </div>
-                    <div className="box">
-                        <img className="image" src={s2} alt="" />
-                        <div className="content">
-                            <img src={s_2} alt="" />
-                            <h3>extra cheese pizza</h3>
-                            <p>This contains with a burst of cheese</p>
-                        </div>
-                    </div>
-                    <div className="box">
-                        <img className="image" src={s3} alt="" />
-                        <div className="content">
-                            <img src={s_3} alt="" />
-                            <h3> ice-cream</h3>
-                            <p>Hoe made ice-cream with no preservative</p>
-                        </div>
-                    </div>
-                    <div className="box">
-                        <img className="image" src={s4} alt="" />
-                        <div className="content">
-                            <img src={s_4} alt="" />
-                            <h3>cold drinks</h3>
-                            <p>all kind of drinks are available here</p>
-                        </div>
-                    </div>
-                    <div className="box">
-                        <img className="image" src={s5} alt="" />
-                        <div className="content">
-                            <img src={s_5} alt="" />
-                            <h3>tasty sweets</h3>
-                            <p>all kind of sweets are hand made with garden fresh items</p>
-                        </div>
-                    </div>
-                    <div className="box">
-                        <img className="image" src={s6} alt="" />
-                        <div className="content">
-                            <img src={s_6} alt="" />
-                            <h3>healty breakfast</h3>
-                            <p>Pre-defined platter as well as custom platter is available</p>
-                        </div>
-                    </div>
 
-                </div>
 
-            </section>
+
         </>
     );
 };

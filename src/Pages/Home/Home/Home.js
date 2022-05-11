@@ -7,18 +7,20 @@ import Speciality from '../Speciality/Speciality';
 import Footer from '../../Shared/Footer/Footer'
 import Works from '../Works/Works';
 import Allfoods from '../Allfoods/Allfoods';
+import Special from '../Speciality/Special';
+import Popularity from '../Popular/Popularity';
+import Galleries from '../Gallery/Galleries';
 
 
 const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <Speciality></Speciality>
-            <Popular></Popular>
+            <Special></Special>
+            <Popularity></Popularity>
             <Works></Works>
-            <Gallery></Gallery>
+            <Galleries></Galleries>
             <Reviews></Reviews>
-            <Footer></Footer>
 
         </div>
     );

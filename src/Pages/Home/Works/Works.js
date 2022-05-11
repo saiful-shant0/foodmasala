@@ -9,25 +9,25 @@ const Works = () => {
     return (
         <div className="step-container">
 
-            <h1 className="heading">how it <span>works</span></h1>
+            <h1 className="heading App">How We <span className='text-danger'>Works</span></h1>
 
             <section className="steps">
 
                 <div className="box">
                     <img src={s1} alt="" />
-                    <h3>choose your favorite food</h3>
+                    <h3>Choose Your Favorite Food</h3>
                 </div>
                 <div className="box">
                     <img src={s2} alt="" />
-                    <h3>free and fast delivery</h3>
+                    <h3>Free And Fast Delivery</h3>
                 </div>
                 <div className="box">
                     <img src={s3} alt="" />
-                    <h3>easy payments methods</h3>
+                    <h3>Easy Payments Methods</h3>
                 </div>
                 <div className="box">
                     <img src={s4} alt="" />
-                    <h3>and finally, enjoy your food</h3>
+                    <h3>And Finally, Enjoy Your Food</h3>
                 </div>
 
             </section>
