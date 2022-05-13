@@ -10,17 +10,22 @@ import Allfoods from '../Allfoods/Allfoods';
 import Special from '../Speciality/Special';
 import Popularity from '../Popular/Popularity';
 import Galleries from '../Gallery/Galleries';
+import Header from '../../Shared/Header/Header';
+import ReviewGet from '../../ReviewGet/ReviewGet';
 
 
 const Home = () => {
     return (
         <div>
+            <Header></Header>
             <Banner></Banner>
             <Special></Special>
             <Popularity></Popularity>
             <Works></Works>
             <Galleries></Galleries>
             <Reviews></Reviews>
+            <ReviewGet></ReviewGet>
+            <Footer></Footer>
 
         </div>
     );

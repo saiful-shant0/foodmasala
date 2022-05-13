@@ -3,17 +3,17 @@ import './Footer.css'
 
 const Footer = () => {
     return (
-        <div id="addo-footer2" class="section">
-            <div class="addo-narrow-content">
-                <div class="row">
-                    <div class="col-md-4 animate-box fadeInLeft animated" data-animate-effect="fadeInLeft">
-                        <p class="addo-lead">&copy; 2021 NAYEEM. All rights reserved</p>
+        <div id="addo-footer2" className="section">
+            <div className="addo-narrow-content">
+                <div className="row">
+                    <div className="col-md-4 animate-box fadeInLeft animated" data-animate-effect="fadeInLeft">
+                        <p className="addo-lead">&copy; 2022 Naeem. All rights reserved</p>
                     </div>
-                    <div class="col-md-4 animate-box fadeInLeft animated" data-animate-effect="fadeInLeft">
-                        <h2 class="text-center">Nayeem<br /><span>ZANNATUN </span></h2>
+                    <div className="col-md-4 animate-box fadeInLeft animated" data-animate-effect="fadeInLeft">
+                        <h2 className="text-center">Naeem<br /><span>ZANNATUN </span></h2>
                     </div>
-                    <div class="col-md-4 animate-box fadeInLeft animated" data-animate-effect="fadeInLeft">
-                        <ul class="social-network">
+                    <div className="col-md-4 animate-box fadeInLeft animated" data-animate-effect="fadeInLeft">
+                        <ul className="social-network">
                             <li><a href="https://www.facebook.com/saifulshant0/">Facebook</a></li>
                             <li><a href="https://twitter.com/saifuli18658918">Twitter</a></li>
                             <li><a href="https://github.com/saiful-shant0">GitHub</a></li>

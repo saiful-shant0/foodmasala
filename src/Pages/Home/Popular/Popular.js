@@ -25,7 +25,7 @@ const Popular = ({ food }) => {
 
             {food.type == 'popular' &&
                 <div className="box">
-                    <span className="price"> {price} </span>
+                    <span className="price"> {price}৳</span>
                     <img src={photo} alt="" />
                     <h3>{name}r</h3>
                     <div className="stars">

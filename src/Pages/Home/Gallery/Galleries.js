@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import useFoods from '../../../hooks/useFoods';
 import Gallery from './Gallery';
+
 
 const Galleries = () => {
     const [foods, setFoods] = useState([]);
@@ -12,8 +12,8 @@ const Galleries = () => {
             .then(data => setFoods(data.slice(1, 6)))
     }, [])
     return (
-        <section className="gallery" id="gallery">
 
+        <section className="gallery" id="gallery">
             <h1 className="heading App"> Our Food <span className='text-danger'> Gallery </span> </h1>
 
             <div className="box-container">
@@ -30,6 +30,7 @@ const Galleries = () => {
             </div>
             <Nav.Link as={Link} className="position-absolute end-0 me-5 mt-3" to="/allfoods">Explore More... </Nav.Link>
         </section>
+
     );
 };
 

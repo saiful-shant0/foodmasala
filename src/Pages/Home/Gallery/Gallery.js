@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import './Gallery.css';
 
 const Gallery = ({ food }) => {
-    console.log(food)
+
 
 
     const { _id, name, photo, type, origine, price } = food;
@@ -22,7 +22,7 @@ const Gallery = ({ food }) => {
             <div className="content">
                 <h3>{name}</h3>
 
-                <p>Price: {price}</p>
+                <p>Price: {price}৳</p>
                 <Button onClick={() => handleclick(_id)} variant="warning"> Order Now </Button>
             </div>
         </div>

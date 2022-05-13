@@ -29,7 +29,7 @@ const Orders = () => {
     const handleOrderClose = () => setopenOrder(false);
     return (
         <div>
-
+            <Header></Header>
             <div className="text-center container shadow-lg p-3 my-5 bg-white rounded">
                 {orderSuccess && <Alert severity="success">Order Successfully</Alert>}
                 <img className='w-100' src={photo} alt="" />
@@ -46,7 +46,7 @@ const Orders = () => {
 
                 </OPenModal>
             </div>
-
+            <Footer></Footer>
         </div>
     );
 };

@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import React, { useState } from 'react';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
+import Footer from '../../Shared/Footer/Footer';
 
 // const firebaseConfig = {
 //     apiKey: "AIzaSyC6QqoyaxU6n404_fY8a_GmLHUcG1XQgno",
@@ -38,60 +39,63 @@ const Login = () => {
     }
 
     return (
-        <Container sx={{ mt: 5 }}>
-            <Typography sx={{ my: 5 }} variant="h3" gutterBottom>
-                Welcome to Padrolo Motors
-            </Typography>
-            <Grid container spacing={2}>
+        <div className='mt-5'>
+            <Container sx={{ mt: 5 }}>
+                <Typography sx={{ my: 5 }} variant="h3" gutterBottom>
+                    Welcome to Food Masala
+                </Typography>
+                <Grid container spacing={2}>
 
-                <Grid item sx={{ mt: 8 }} xs={12} md={6}>
+                    <Grid item sx={{ mt: 8 }} xs={12} md={6}>
 
-                    <Typography variant="body1" gutterBottom>
-                        LogIn
-                    </Typography>
-                    <form onSubmit={handleLogInSubmit}>
+                        <Typography variant="body1" gutterBottom>
+                            LogIn
+                        </Typography>
+                        <form onSubmit={handleLogInSubmit}>
 
-                        <TextField
-                            sx={{ width: '75%', m: 1 }}
-                            id="standard-basic" label="Your Email"
-                            name="email"
-                            type="email"
-                            onChange={handleOnChange}
-                            variant="standard" />
+                            <TextField
+                                sx={{ width: '75%', m: 1 }}
+                                id="standard-basic" label="Your Email"
+                                name="email"
+                                type="email"
+                                onChange={handleOnChange}
+                                variant="standard" />
 
-                        <TextField id="standard-basic"
-                            sx={{ width: '75%', m: 1 }}
-                            label="Password"
-                            type="password"
-                            name="password"
-                            onChange={handleOnChange}
-                            variant="standard" />
+                            <TextField id="standard-basic"
+                                sx={{ width: '75%', m: 1 }}
+                                label="Password"
+                                type="password"
+                                name="password"
+                                onChange={handleOnChange}
+                                variant="standard" />
 
-                        <Button
-                            sx={{ width: '75%', m: 1 }}
-                            type="submit"
-                            variant="contained">Log In</Button>
-                        <NavLink
-                            style={{ textDecoration: 'none' }}
-                            to='/registration'>
-                            <Button variant="text">New User? Please Register </Button>
-                        </NavLink>
+                            <Button
+                                sx={{ width: '75%', m: 1 }}
+                                type="submit"
+                                variant="contained">Log In</Button>
+                            <NavLink
+                                style={{ textDecoration: 'none' }}
+                                to='/registration'>
+                                <Button variant="text">New User? Please Register </Button>
+                            </NavLink>
 
-                        {isLoading && <CircularProgress />}
-                        {user?.email && <Alert severity="success">Login Successfully</Alert>}
-                        {authError && <Alert severity="error">{authError}</Alert>}
-                    </form>
-                    <br />
-                    <br />
+                            {isLoading && <CircularProgress />}
+                            {user?.email && <Alert severity="success">Login Successfully</Alert>}
+                            {authError && <Alert severity="error">{authError}</Alert>}
+                        </form>
+                        <br />
+                        <br />
+
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                        <img style={{ width: '100%' }} src="https://res.cloudinary.com/sonic-drive-in/image/upload/v1621267817/oa_menu/thumbnails/menuthumbnail_burger_cheeseburger_may.png" alt="" />
+
+                    </Grid>
 
                 </Grid>
-                <Grid item xs={12} md={6}>
-                    <img style={{ width: '100%' }} src="https://www.nicepng.com/png/full/830-8305620_racing-motorbike-png-vector-for-a-motorcycle.png" alt="" />
-
-                </Grid>
-
-            </Grid>
-        </Container>
+            </Container>
+            <div className='fixed-bottom'> <Footer></Footer></div>
+        </div>
     );
 };
 

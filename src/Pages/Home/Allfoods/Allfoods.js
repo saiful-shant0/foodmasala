@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
 import useFoods from '../../../hooks/useFoods';
+import Footer from '../../Shared/Footer/Footer';
+import Header from '../../Shared/Header/Header';
 import Gallery from '../Gallery/Gallery';
 
 
@@ -8,24 +10,28 @@ const Allfoods = () => {
     const [foods] = useFoods();
 
     return (
-        <section className="gallery" id="gallery">
+        <>
+            <Header></Header>
+            <section className="gallery" id="gallery">
 
-            <h1 className="heading App "> Our Food <span className='text-warning'> Gallery </span> </h1>
+                <h1 className="heading App "> Our Food <span className='text-warning'> Gallery </span> </h1>
 
-            <div className="box-container">
+                <div className="box-container">
 
-                {
-                    foods.map(food =>
-                        <Gallery
+                    {
+                        foods.map(food =>
+                            <Gallery
 
-                            key={food._id}
-                            food={food}
-                        ></Gallery>
-                    )
-                }
-            </div>
+                                key={food._id}
+                                food={food}
+                            ></Gallery>
+                        )
+                    }
+                </div>
 
-        </section>
+            </section>
+            <Footer></Footer>
+        </>
     );
 };
 

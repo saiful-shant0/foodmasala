@@ -6,18 +6,18 @@ import './Reviews.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { faStarHalfStroke } from '@fortawesome/free-solid-svg-icons'
-const Reviews = () => {
+import Header from '../../Shared/Header/Header';
+const Reviews = ({ revie }) => {
+
+
     return (
-        <section className="review" id="review">
+        <>
 
-            <h1 className="heading App"> Our Customers <span className='text-danger'>Reviews</span> </h1>
 
-            <div className="box-container">
-
-                <div className="box">
-                    <img src={p1} alt="" />
-                    <h3>Kathelin</h3>
-
+            {typeof revie !== "undefined" && <div className="box">
+                <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa743gMgAQiEJZsTrjoLGS0Qgghopq7B2I6FYpewgRYhNzzAEiRVolY2GXZfB0ZvKUN-s&usqp=CAU' alt="" />
+                <h3>{revie.name}</h3>
+                <div className="stars">
                     <FontAwesomeIcon className='text-warning' icon={faStar} />
                     <FontAwesomeIcon className='text-warning' icon={faStar} />
 
@@ -25,38 +25,12 @@ const Reviews = () => {
                     <FontAwesomeIcon className='text-warning' icon={faStar} />
 
                     <FontAwesomeIcon className='text-warning' icon={faStarHalfStroke} />
-
-
-                    <p>Best qualoty food I ever had. Couldn't give 5 star because of lttle late delivery.</p>
                 </div>
-                <div className="box">
-                    <img src={p2} alt="" />
-                    <h3>jimmy Rocker</h3>
-                    <div className="stars">
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="far fa-star"></i>
-                    </div>
-                    <p>best kind of food with lowest price. keep it up!!!!</p>
-                </div>
-                <div className="box">
-                    <img src={p3} alt="" />
-                    <h3>Dororo Kun</h3>
-                    <div className="stars">
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="far fa-star"></i>
-                    </div>
-                    <p>food quality and pricing are satisfactory. just need more kind of food item</p>
-                </div>
+                <p>{revie.description}</p>
+            </div>}
 
-            </div>
 
-        </section>
+        </>
     );
 };
 
