@@ -7,7 +7,7 @@ const MyOrders = () => {
     const { user } = useAuth();
     const [orders, setAppointments] = useState([]);
     useEffect(() => {
-        const url = `http://localhost:4000/orders?email=${user.email}`;
+        const url = `https://red-chilli.herokuapp.com/orders?email=${user.email}`;
 
         fetch(url,
             {

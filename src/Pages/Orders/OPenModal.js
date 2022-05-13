@@ -35,7 +35,7 @@ const OPenModal = ({ openOrder, handleOrderClose, food, setOrderSuccess }) => {
             FoodName: name,
 
         }
-        fetch('http://localhost:4000/orders', {
+        fetch('https://red-chilli.herokuapp.com/orders', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

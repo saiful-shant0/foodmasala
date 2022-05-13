@@ -7,7 +7,7 @@ import Gallery from './Gallery';
 const Galleries = () => {
     const [foods, setFoods] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:4000/allfood')
+        fetch('https://red-chilli.herokuapp.com/allfood')
             .then(res => res.json())
             .then(data => setFoods(data.slice(1, 6)))
     }, [])

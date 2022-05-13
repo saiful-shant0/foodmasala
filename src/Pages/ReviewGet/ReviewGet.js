@@ -11,7 +11,7 @@ import { faStarHalfStroke } from '@fortawesome/free-solid-svg-icons'
 const ReviewGet = () => {
     const [review, setReview] = useState({});
     useEffect(() => {
-        fetch('http://localhost:4000/reviews')
+        fetch('https://red-chilli.herokuapp.com/reviews')
             .then(res => res.json())
             .then(data => setReview(data))
 

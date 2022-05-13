@@ -10,7 +10,7 @@ const Review = () => {
     const { register, handleSubmit, reset } = useForm();
     const { user } = useAuth();
     const onSubmit = data => {
-        axios.post('http://localhost:4000/reviews', data)
+        axios.post('https://red-chilli.herokuapp.com/reviews', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('added successfully');
